@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { database } from './firebase'
 
 class App extends Component {
+
+componentDidMount() {
+database.ref('/events').push({
+  name: 'My new awesome concerto duo',
+  date: 'monday',
+  description: 'uno realmente awesome evento!!'
+}
+)
+}
+
   render() {
     return (
       <div className="App">
